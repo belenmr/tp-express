@@ -1,0 +1,22 @@
+{
+  "name": "tp-express",
+  "version": "1.0.0",
+  "description": "Trabajo Practico Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belenmr/tp-express.git"
+  },
+  "author": "Belen Medina Roldan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belenmr/tp-express/issues"
+  },
+  "homepage": "https://github.com/belenmr/tp-express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
