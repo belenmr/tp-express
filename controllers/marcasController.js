@@ -33,13 +33,17 @@ module.exports = {
         res.set({'content-type':'text/plain;charset=utf-8'});
 
         let carsForBrand = cars.filter(car => car.marca.toLowerCase() == req.params.marca.toLowerCase() );
-
-        //console.log(carsForBrand);
-        carsForBrand.forEach(car => {
-            res.write(`- Marca: ${car.marca} \n`);
-            res.write(`- Modelo: ${car.modelo} \n`);
-            res.write(`- Año: ${car.anio} \n\n\n`);
-        });
+        //console.log(carsForBrand.length);
+        if (carsForBrand.length > 0) {
+            carsForBrand.forEach(car => {
+                res.write(`- Marca: ${car.marca} \n`);
+                res.write(`- Modelo: ${car.modelo} \n`);
+                res.write(`- Año: ${car.anio} \n\n\n`);
+            });
+        } else {
+            res.write(`No se encontro la marca ${req.params.marca.toUpperCase()}`);
+        }        
+        
         res.end();
     }
 }
