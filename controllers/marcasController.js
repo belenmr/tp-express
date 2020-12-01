@@ -35,6 +35,7 @@ module.exports = {
         let carsForBrand = cars.filter(car => car.marca.toLowerCase() == req.params.marca.toLowerCase() );
         //console.log(carsForBrand.length);
         if (carsForBrand.length > 0) {
+            res.write(`Total de autos: ${carsForBrand.length} \n\n`);
             carsForBrand.forEach(car => {
                 res.write(`- Marca: ${car.marca} \n`);
                 res.write(`- Modelo: ${car.modelo} \n`);

@@ -22,6 +22,7 @@ module.exports = {
             res.write(`${branch.sucursal} \n`);
             res.write(`\t - Direccion: ${branch.direccion} \n`);
             res.write(`\t - Telefono: ${branch.telefono} \n\n`);
+            res.write(`\t Total de autos: ${branch.autos.length} \n`);
             res.write('\t Nuestros autos:\n\n');
             branch.autos.forEach(element => {
                 res.write(`\t\t Marca: ${element.marca} \n`);

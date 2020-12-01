@@ -10,6 +10,7 @@ module.exports = {
     getCars: (req,res) => {
         res.set({'content-type':'text/plain;charset=utf-8'});
 
+        res.write(`Total de autos: ${cars.length} \n\n`);
         cars.forEach(car => {
             res.write(`- Marca: ${car.marca} \n`);
             res.write(`- Modelo: ${car.modelo} \n`);
@@ -27,6 +28,7 @@ module.exports = {
 
         if (carsForBrand.length > 0) {
             if (data == undefined) {
+                res.write(`Total de autos: ${carsForBrand.length} \n\n`);
                 carsForBrand.forEach(car => {
                     res.write(`- Marca: ${car.marca} \n`);
                     res.write(`- Modelo: ${car.modelo} \n`);
@@ -37,6 +39,7 @@ module.exports = {
                 let carsForColour = carsForBrand.filter(car => car.color == data.toLowerCase() );
                 
                 if (carsForColour.length > 0) {
+                    res.write(`Total de autos: ${carsForColour.length} \n\n`);
                     carsForColour.forEach(car => {
                         res.write(`- Marca: ${car.marca} \n`);
                         res.write(`- Modelo: ${car.modelo} \n`);
@@ -50,6 +53,7 @@ module.exports = {
                 let carsForYear = carsForBrand.filter(car => car.anio == Number(data) );
                 
                 if (carsForYear.length > 0) {
+                    res.write(`Total de autos: ${carsForYear.length} \n\n`);
                     carsForYear.forEach(car => {
                         res.write(`- Marca: ${car.marca} \n`);
                         res.write(`- Modelo: ${car.modelo} \n`);
