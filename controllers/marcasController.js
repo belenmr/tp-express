@@ -11,16 +11,11 @@ module.exports = {
         res.set({'content-type':'text/plain;charset=utf-8'});
         res.write('Nuestras marcas: \n\n')
 
-        let uniqueBrands = [];
-        let brands = [];
-        
-        cars.forEach(car => {
-            brands.push(car.marca);
-        });
+        let uniqueBrands = [];        
 
-        brands.forEach(brand =>{
-            if(uniqueBrands.indexOf(brand) == -1 ){
-                (uniqueBrands.push(brand))
+        cars.forEach(car =>{
+            if(uniqueBrands.indexOf(car.marca) == -1 ){
+                (uniqueBrands.push(car.marca))
             }
         })
 
